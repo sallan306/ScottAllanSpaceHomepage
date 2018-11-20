@@ -1,0 +1,158 @@
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(197, 193, 218);
+  background-color:rgb(82, 60, 122);
+  margin-top:0px;
+  margin-bottom:4px;
+  }
+body {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+  padding: 0 auto;
+}
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  background: #111;
+  z-index: 100;
+  font-size: 40px;
+}
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  background: #111;
+  z-index: 100;
+  font-size: 30px;
+}
+.aboutMeContent {
+
+  font-size: 30px;
+  width: 50%;
+}
+.aboutMeBox {
+
+text-align: center;
+margin: 0 auto;
+width: 200%;
+}
+.portfolioBox {
+  padding-left: 65%;
+  }
+  
+.imageBox { 
+  width: 100%; 
+  float: left;
+  margin-right: 120px;
+  margin-bottom: -80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+h2 {
+  position: relative;
+  bottom: 20px;
+  font-size: 20px;
+  width: 300px;
+  text-align: left;
+  bottom:80px;
+  background: #111;
+  height: 60px;
+  padding-left: 20%;
+  padding-top: 10%;
+}
+    
+.portfolioImage {
+    width: 300px;
+    height: 200px;
+  
+}
+.demo-frame header {
+    display: none;
+}
+
+.demo-wrapper {
+    min-height: 500px;
+}
+
+.bsap_1280449 {
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.parallax [class*="bg__"] {
+  position: relative;
+  height: 500px;
+  text-indent: -9999px;
+  background-attachment: fixed;
+  background-position: center;
+  background-position-y: -10%;
+  background-size: cover;
+}
+.parallax [class*="bg__"]:nth-child(2n) {
+  box-shadow: inset 0 0 1em #111;
+}
+.parallax .bg__foo, .parallax .bg__bazz {
+  height: 100vh;
+}
+.parallax .bg__foo {
+  background-image: url("../images/giraffe_paint.jpg");
+}
+.parallax .bg__bar {
+  background-image: url("../images/giraffe_pixel.jpg");
+}
+.parallax .bg__baz {
+  background-image: url("../images/giraffe_negative.jpg");
+}
+.parallax .bg__bazz {
+  background-image: url("../images/giraffe_blur.jpg");
+}
+.parallax .bg__break {
+  box-shadow: inset 0 0 1em #111;
+  background-image: url("../images/giraffe_normal.jpg");
+}
+.parallax .capture {
+  float: right;
+  width: 200px;
+  padding: 1em;
+  margin: -1.5em 1em 0 0;
+  text-indent: 0;
+  background: rgba(29, 2, 2, 0.90);
+  box-shadow: 0 1px 0.125em #333;
+  color:rgb(99, 89, 89);
+}
+
+article .container {
+  width: 600px;
+  margin: 0 auto;
+}
+article .header {
+  position: relative;
+  margin: -5em 0 0 0;
+  padding: 1em;
+  text-align: left;
+  font-size: 2em;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+article h1, article h2 {
+  margin: 0 0 0.333em;
+}
+article section {
+  padding: 3em;
+}
+article section.parallax {
+  margin: 0;
+  padding: 0;
+}
+
+#frame {
+  width:960px;
+  margin: 0 auto;
+}
