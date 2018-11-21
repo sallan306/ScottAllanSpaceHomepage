@@ -69,7 +69,7 @@
         #contentWindow {
           position: relative;
           top:5%;
-          width: 80%;
+          width: 25%;
           height: 15%;
           background-color: rgba(30, 85, 95, 0.9);
           color: #9b8989;
@@ -173,7 +173,62 @@
             background: #555; 
         }
         /* ---------------------------------------END SCROLLBAR ----------------------------------------- */
-        /* ---------------------------------------MEDIA PHONES ------------------------------------------ */
+
+          /* ------------------------------------SCREENS BELOW 1100PX ------------------------------------------- */
+          @media only screen and (max-width: 1100px) {
+            #myName {
+              font-size: 50px;
+            }
+            .customButton{
+              font-size: 16px;
+            }
+            #contentWindow {
+              width: 30%
+            }
+        }
+          /* ------------------------------------END SCREENS BELOW 1100PX ------------------------------------------- */
+
+          /* ------------------------------------SCREENS BELOW 1000PX ------------------------------------------- */
+          @media only screen and (max-width: 1000px) {
+            #myName {
+              font-size: 50px;
+            }
+            .customButton{
+              font-size: 16px;
+            }
+            #contentWindow {
+              width: 40%
+            }
+        }
+          /* ------------------------------------END SCREENS BELOW 1000PX ------------------------------------------- */
+
+          /* ------------------------------------SCREENS BELOW 780PX ------------------------------------------- */
+          @media only screen and (max-width: 780px) {
+            #myName {
+              font-size: 45px;
+            }
+            .customButton{
+              font-size: 16px;
+            }
+            #contentWindow {
+              overflow: none;
+              width: 50%;
+              height: 10%
+            }
+            .contentContainer {
+              height: 60%;
+            }
+            .imageBox {
+            width: 50%;
+            height: 50%
+            }
+            .portfolio {
+              overflow: hidden;
+            }
+        }
+        /* ------------------------------------END SCREENS BELOW 780PX ------------------------------------------- */
+
+        /* ---------------------------------------SCREENS BELOW 450PX ------------------------------------------ */
         @media only screen and (max-width: 450px) {
           #contentWindow {
             position: absolute;
@@ -227,8 +282,25 @@
           .mainContent {
             height: 90%;
           }
-          /* ------------------------------------END MEDIA PHONES ------------------------------------------- */
+          #aboutMePic {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 20px;
+            float: none;
+            height: 200px;
+            width: 150px;
+          }
+          .paragraph1, .paragraph2 {
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 16px;
+            letter-spacing: 4px;
+          }
+          .imageBox {
+            width: 100%;
+          } 
         }
+          /* ------------------------------------END SCREENS BELOW 450PX ------------------------------------------- */
       </style>
 <!--=============================================END STYLE=====================================================-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>

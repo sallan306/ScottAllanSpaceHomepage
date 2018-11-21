@@ -41,7 +41,7 @@ $(document).ready(function(){
     $("#aboutMeButton").on("click", function() {
 
         if ($(".aboutMe").data("visible") === false) {
-            
+            $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"})
             $(".aboutMe").css({"overflow":"auto"});
             setTimeout(function() {
@@ -58,6 +58,9 @@ $(document).ready(function(){
         else if ($(".aboutMe").data("visible") === true) {
 
             $("#contentWindow").css({"height":"15%"})
+            setTimeout(function(){
+                changeContentWindowWidth()
+            },500)
 
             $(".aboutMe").css({"overflow":"hidden"});
             $(".aboutMe").fadeOut(100)
@@ -75,6 +78,7 @@ $(document).ready(function(){
     $("#portfolioButton").on("click", function() {
         if ($(".portfolio").data("visible") === false) {
 
+            $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"})
             $(".portfolio").css({"overflow":"auto"});
             $(".portfolio").css({"height":"480px"});
@@ -92,6 +96,9 @@ $(document).ready(function(){
         else if ($(".portfolio").data("visible") === true){
 
             $("#contentWindow").css({"height":"15%"})
+            setTimeout(function(){
+                changeContentWindowWidth()
+            },500)
             $(".portfolio").css({"overflow":"hidden"});    
             $(".portfolio").fadeOut(50)
             
@@ -107,7 +114,7 @@ $(document).ready(function(){
 
     $("#contactButton").on("click", function() {
         if ($(".contact").data("visible") === false) {
-
+            $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"});
             $(".contact").css({"overflow":"auto"});
             setTimeout(function() {
@@ -126,7 +133,9 @@ $(document).ready(function(){
         else if($(".contact").data("visible") === true) {
 
             $("#contentWindow").css({"height":"15%"})
-
+            setTimeout(function(){
+                changeContentWindowWidth()
+            },500)
             $(".contact").css({"overflow":"hidden"});      
             $(".contact").fadeOut(100)
             
@@ -139,3 +148,24 @@ $(document).ready(function(){
         }
     })
 })
+function changeContentWindowWidth() {
+    if (x.matches) { 
+        console.log("under 450px")
+        $("#contentWindow").css({"width":"80%"})
+    } else if (y.matches) {
+        console.log("under 750")
+        $("#contentWindow").css({"width":"50%"})
+    }
+    else if (z.matches) {
+        console.log("under 1000")
+        $("#contentWindow").css({"width":"40%"})
+    } else {
+        console.log("about 1000")
+        $("#contentWindow").css({"width":"25%"})
+    }
+}
+
+var x = window.matchMedia("(max-width: 450px)"),
+    y = window.matchMedia("(max-width: 750px)"),
+    z = window.matchMedia("(max-width: 1000px)")
+ // Call listener function at run time
