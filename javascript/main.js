@@ -42,12 +42,14 @@ $(document).ready(function(){
 
         if ($(".aboutMe").data("visible") === false) {
             
-            $("#contentWindow").css({"height":"75%"})
+            $("#contentWindow").css({"height":"85%"})
             $(".aboutMe").css({"overflow":"auto"});
-            $(".aboutMe").fadeIn(1000)
+            setTimeout(function() {
+                $(".aboutMe").fadeIn(300)
+            },200)   
             
-            $(".portfolio").css({"display":"none"});
-            $(".contact").css({"display":"none"});
+            $(".portfolio").css({"display":"none"})
+            $(".contact").css({"display":"none"})
 
             $(".aboutMe").data("visible", true)
             $(".portfolio").data("visible", false)
@@ -60,9 +62,8 @@ $(document).ready(function(){
             $(".aboutMe").css({"overflow":"hidden"});
             $(".aboutMe").fadeOut(100)
             
-            $(".aboutMe").css({"display":"none"});
-            $(".portfolio").css({"display":"none"});
-            $(".contact").css({"display":"none"});
+            $(".portfolio").css({"display":"none"})
+            $(".contact").css({"display":"none"})
 
             $(".aboutMe").data("visible", false)
             $(".portfolio").data("visible", false)
@@ -74,14 +75,16 @@ $(document).ready(function(){
     $("#portfolioButton").on("click", function() {
         if ($(".portfolio").data("visible") === false) {
 
-            $("#contentWindow").css({"height":"75%"})
+            $("#contentWindow").css({"height":"85%"})
             $(".portfolio").css({"overflow":"auto"});
-            $(".portfolio").css({"height":"400px"});
-            $(".portfolio").fadeIn(1000)
+            $(".portfolio").css({"height":"480px"});
+            setTimeout(function() {
+                $(".portfolio").fadeIn(300)
+            },200)
             
             
-            $(".aboutMe").css({"display":"none"});
-            $(".contact").css({"display":"none"});
+            $(".aboutMe").fadeOut(100)
+            $(".contact").fadeOut(100)
             $(".portfolio").data("visible", true)
             $(".aboutMe").data("visible", false)
             $(".contact").data("visible", false)
@@ -90,15 +93,14 @@ $(document).ready(function(){
 
             $("#contentWindow").css({"height":"15%"})
             $(".portfolio").css({"overflow":"hidden"});    
-            $(".portfolio").fadeOut(100)
+            $(".portfolio").fadeOut(50)
             
             $(".portfolio").data("visible", false)
             $(".aboutMe").data("visible", false)
             $(".contact").data("visible", false)
 
-            $(".aboutMe").css({"display":"none"});
-            $(".portfolio").css({"display":"none"});
-            $(".contact").css({"display":"none"});
+            $(".aboutMe").fadeOut(100)
+            $(".contact").fadeOut(100)
         }
     })
 
@@ -106,17 +108,20 @@ $(document).ready(function(){
     $("#contactButton").on("click", function() {
         if ($(".contact").data("visible") === false) {
 
-            $("#contentWindow").css({"height":"75%"});
-            $(".contact").css({"overflow":"auto"});      
-            $(".contact").fadeIn(1000)
+            $("#contentWindow").css({"height":"85%"});
+            $(".contact").css({"overflow":"auto"});
+            setTimeout(function() {
+                $(".contact").fadeIn(300)
+            },200)      
+     
             
             
             $(".contact").data("visible", true)
 
             $(".aboutMe").data("visible", false)
             $(".portfolio").data("visible", false)
-            $(".aboutMe").css({"display":"none"});
-            $(".portfolio").css({"display":"none"});
+            $(".aboutMe").fadeOut(100)
+            $(".portfolio").css({"display":"none"})
         }
         else if($(".contact").data("visible") === true) {
 
@@ -125,9 +130,8 @@ $(document).ready(function(){
             $(".contact").css({"overflow":"hidden"});      
             $(".contact").fadeOut(100)
             
-            $(".portfolio").css({"display":"none"});
-            $(".aboutMe").css({"display":"none"});
-            $(".contact").css({"display":"none"});
+            $(".portfolio").css({"display":"none"})
+            $(".aboutMe").css({"display":"none"})
 
             $(".contact").data("visible", false)
             $(".aboutMe").data("visible", false)
