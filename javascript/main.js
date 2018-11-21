@@ -86,7 +86,7 @@ $(document).ready(function(){
             $("#contentWindow").css({"top":"-300px"})
 
             $(".portfolio").css({"overflow":"auto"});
-            $(".portfolio").css({"top":"-90px"})
+            $(".portfolio").css({"top":"-95px"})
             $(".portfolio").fadeIn(1000)
             
             
@@ -125,7 +125,7 @@ $(document).ready(function(){
             $("#contentWindow").css({"top":"-300px"})
 
             $(".contact").css({"overflow":"auto"});      
-            $(".contact").css({"top":"-150px"})
+            $(".contact").css({"top":"-152px"})
             $(".contact").fadeIn(1000)
             
             $(".portfolio").css({"display":"none"});
