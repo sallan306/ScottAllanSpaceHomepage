@@ -42,14 +42,9 @@ $(document).ready(function(){
 
         if ($(".aboutMe").data("visible") === false) {
             
-            $("#contentWindow").css({"height":"670px"})
-            $("#contentWindow").css({"width":"70%"})
-            $("#contentWindow").css({"top":"-300px"})
-
+            $("#contentWindow").css({"height":"75%"})
             $(".aboutMe").css({"overflow":"auto"});
-            $(".aboutMe").css({"top":"-40px"})
             $(".aboutMe").fadeIn(1000)
-            
             
             $(".portfolio").css({"display":"none"});
             $(".contact").css({"display":"none"});
@@ -60,14 +55,12 @@ $(document).ready(function(){
         }
         else if ($(".aboutMe").data("visible") === true) {
 
-            $("#contentWindow").css({"height":"370px"})
-            $("#contentWindow").css({"top":"-200px"})
-            $("#contentWindow").css({"width":"50%"})
+            $("#contentWindow").css({"height":"15%"})
 
-            $(".aboutMe").fadeOut("fast")
             $(".aboutMe").css({"overflow":"hidden"});
-            $(".aboutMe").css({"top":"0px"})
+            $(".aboutMe").fadeOut(100)
             
+            $(".aboutMe").css({"display":"none"});
             $(".portfolio").css({"display":"none"});
             $(".contact").css({"display":"none"});
 
@@ -81,38 +74,31 @@ $(document).ready(function(){
     $("#portfolioButton").on("click", function() {
         if ($(".portfolio").data("visible") === false) {
 
-            $("#contentWindow").css({"height":"670px"})
-            $("#contentWindow").css({"width":"70%"})
-            $("#contentWindow").css({"top":"-300px"})
-
+            $("#contentWindow").css({"height":"75%"})
             $(".portfolio").css({"overflow":"auto"});
-            $(".portfolio").css({"top":"-95px"})
+            $(".portfolio").css({"height":"400px"});
             $(".portfolio").fadeIn(1000)
             
             
             $(".aboutMe").css({"display":"none"});
             $(".contact").css({"display":"none"});
-
             $(".portfolio").data("visible", true)
             $(".aboutMe").data("visible", false)
             $(".contact").data("visible", false)
         }
         else if ($(".portfolio").data("visible") === true){
 
-            $("#contentWindow").css({"height":"370px"})
-            $("#contentWindow").css({"top":"-200px"})
-            $("#contentWindow").css({"width":"50%"})
-
+            $("#contentWindow").css({"height":"15%"})
             $(".portfolio").css({"overflow":"hidden"});    
-            $(".portfolio").css({"top":"0px"})
-            $(".portfolio").fadeOut("fast")
-            
-            $(".aboutMe").css({"display":"none"});
-            $(".contact").css({"display":"none"});
+            $(".portfolio").fadeOut(100)
             
             $(".portfolio").data("visible", false)
             $(".aboutMe").data("visible", false)
             $(".contact").data("visible", false)
+
+            $(".aboutMe").css({"display":"none"});
+            $(".portfolio").css({"display":"none"});
+            $(".contact").css({"display":"none"});
         }
     })
 
@@ -120,34 +106,29 @@ $(document).ready(function(){
     $("#contactButton").on("click", function() {
         if ($(".contact").data("visible") === false) {
 
-            $("#contentWindow").css({"height":"670px"})
-            $("#contentWindow").css({"width":"70%"})
-            $("#contentWindow").css({"top":"-300px"})
-
+            $("#contentWindow").css({"height":"75%"});
             $(".contact").css({"overflow":"auto"});      
-            $(".contact").css({"top":"-152px"})
             $(".contact").fadeIn(1000)
             
-            $(".portfolio").css({"display":"none"});
-            $(".aboutMe").css({"display":"none"});
-
+            
             $(".contact").data("visible", true)
+
             $(".aboutMe").data("visible", false)
             $(".portfolio").data("visible", false)
+            $(".aboutMe").css({"display":"none"});
+            $(".portfolio").css({"display":"none"});
         }
         else if($(".contact").data("visible") === true) {
 
-            $("#contentWindow").css({"height":"370px"})
-            $("#contentWindow").css({"top":"-200px"})
-            $("#contentWindow").css({"width":"50%"})
+            $("#contentWindow").css({"height":"15%"})
 
             $(".contact").css({"overflow":"hidden"});      
-            $(".contact").css({"top":"0px"})
-            $(".contact").fadeOut("fast")
+            $(".contact").fadeOut(100)
             
             $(".portfolio").css({"display":"none"});
             $(".aboutMe").css({"display":"none"});
-            
+            $(".contact").css({"display":"none"});
+
             $(".contact").data("visible", false)
             $(".aboutMe").data("visible", false)
             $(".portfolio").data("visible", false)
