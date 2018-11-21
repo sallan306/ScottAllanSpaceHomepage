@@ -37,81 +37,120 @@ $('.img-parallax').each(function(){
       }
     });
   });
+$(document).ready(function(){
+    $("#aboutMeButton").on("click", function() {
 
-$("#aboutMeButton").on("click", function() {
+        if ($(".aboutMe").data("visible") === false) {
+            
+            $("#contentWindow").css({"height":"670px"})
+            $("#contentWindow").css({"width":"70%"})
+            $("#contentWindow").css({"top":"-300px"})
 
-    if ($(".aboutMeBox").data("visible") === false) {
+            $(".aboutMe").css({"overflow":"auto"});
+            $(".aboutMe").css({"top":"-40px"})
+            $(".aboutMe").fadeIn(1000)
+            
+            
+            $(".portfolio").css({"display":"none"});
+            $(".contact").css({"display":"none"});
 
-        $(".aboutMeBox").data("visible", true)
-        $(".aboutMeBox").css({"display":"block"});
-        $(".aboutMeBox").css({"overflow":"auto"});
-        $("#choiceBox").css({"height":"670px"})
-        $("#choiceBox").css({"width":"70%"})
-        $("#choiceBox").css({"top":"-300px"})
-        $("#aboutMe").css({"top":"-40px"})
+            $(".aboutMe").data("visible", true)
+            $(".portfolio").data("visible", false)
+            $(".contact").data("visible", false)
+        }
+        else if ($(".aboutMe").data("visible") === true) {
 
-        $("#portfolio").css({"display":"none"})
-        $("#contactMe").css({"display":"none"})
-    }
-    else if ($(".aboutMeBox").data("visible") === true) {
+            $("#contentWindow").css({"height":"370px"})
+            $("#contentWindow").css({"top":"-200px"})
+            $("#contentWindow").css({"width":"50%"})
 
-        $(".aboutMeBox").data("visible", false)
-        $(".aboutMeBox").css({"display":"none"});
-        $(".aboutMeBox").css({"overflow":"hidden"});
-        $("#choiceBox").css({"height":"370px"})
-        $("#choiceBox").css({"top":"-200px"})
-        $("#choiceBox").css({"width":"50%"})
-        $("#aboutMe").css({"top":"0px"})
+            $(".aboutMe").fadeOut("fast")
+            $(".aboutMe").css({"overflow":"hidden"});
+            $(".aboutMe").css({"top":"0px"})
+            
+            $(".portfolio").css({"display":"none"});
+            $(".contact").css({"display":"none"});
 
-        $("#portfolio").css({"display":""})
-        $("#contactMe").css({"display":""})
-    }
-})
-  $("#portfolioButton").on("click", function() {
-    if ($(".portfolioBox").data("visible") === false) {
+            $(".aboutMe").data("visible", false)
+            $(".portfolio").data("visible", false)
+            $(".contact").data("visible", false)
+        }
+    })
 
-        $(".portfolioBox").data("visible", true)
-        $("#choiceBox").css({"height":"670px"})
-        $("#choiceBox").css({"width":"70%"})
-        $("#choiceBox").css({"top":"-300px"})
-        $("#portfolio").css({"top":"-90px"})
 
-        $("#aboutMe").css({"display":"none"})
-        $("#contactMe").css({"display":"none"})
-    }
-    else if ($(".portfolioBox").data("visible") === true){
+    $("#portfolioButton").on("click", function() {
+        if ($(".portfolio").data("visible") === false) {
 
-        $(".portfolioBox").data("visible", false)
-        $("#choiceBox").css({"height":"370px"})
-        $("#choiceBox").css({"top":"-200px"})
-        $("#choiceBox").css({"width":"50%"})
-        $("#portfolio").css({"top":"0px"})
+            $("#contentWindow").css({"height":"670px"})
+            $("#contentWindow").css({"width":"70%"})
+            $("#contentWindow").css({"top":"-300px"})
 
-        $("#aboutMe").css({"display":""})
-        $("#contactMe").css({"display":""})
-    }
-})
-$("#contactButton").on("click", function() {
-    if ($(".contactBox").data("visible") === false) {
+            $(".portfolio").css({"overflow":"auto"});
+            $(".portfolio").css({"top":"-90px"})
+            $(".portfolio").fadeIn(1000)
+            
+            
+            $(".aboutMe").css({"display":"none"});
+            $(".contact").css({"display":"none"});
 
-        $(".contactBox").data("visible", true)
-        $("#choiceBox").css({"height":"670px"})
-        $("#choiceBox").css({"width":"70%"})
-        $("#choiceBox").css({"top":"-300px"})
-        $("#contactMe").css({"top":"-150px"})
+            $(".portfolio").data("visible", true)
+            $(".aboutMe").data("visible", false)
+            $(".contact").data("visible", false)
+        }
+        else if ($(".portfolio").data("visible") === true){
 
-        $("#aboutMeButton").css({"display":"none"})
-        $("#portfolioButton").css({"display":"none"})
-    }
-    else if($(".contactBox").data("visible") === true) {
+            $("#contentWindow").css({"height":"370px"})
+            $("#contentWindow").css({"top":"-200px"})
+            $("#contentWindow").css({"width":"50%"})
 
-        $(".contactBox").data("visible", false)
-        $("#choiceBox").css({"height":"370px"})
-        $("#choiceBox").css({"top":"-200px"})
-        $("#choiceBox").css({"width":"50%"})
-        $("#contactMe").css({"top":"0px"})
+            $(".portfolio").css({"overflow":"hidden"});    
+            $(".portfolio").css({"top":"0px"})
+            $(".portfolio").fadeOut("fast")
+            
+            $(".aboutMe").css({"display":"none"});
+            $(".contact").css({"display":"none"});
+            
+            $(".portfolio").data("visible", false)
+            $(".aboutMe").data("visible", false)
+            $(".contact").data("visible", false)
+        }
+    })
 
-        $("#aboutMeButton").css({"display":""})
-        $("#portfolioButton").css({"display":""})
-    }
+
+    $("#contactButton").on("click", function() {
+        if ($(".contact").data("visible") === false) {
+
+            $("#contentWindow").css({"height":"670px"})
+            $("#contentWindow").css({"width":"70%"})
+            $("#contentWindow").css({"top":"-300px"})
+
+            $(".contact").css({"overflow":"auto"});      
+            $(".contact").css({"top":"-150px"})
+            $(".contact").fadeIn(1000)
+            
+            $(".portfolio").css({"display":"none"});
+            $(".aboutMe").css({"display":"none"});
+
+            $(".contact").data("visible", true)
+            $(".aboutMe").data("visible", false)
+            $(".portfolio").data("visible", false)
+        }
+        else if($(".contact").data("visible") === true) {
+
+            $("#contentWindow").css({"height":"370px"})
+            $("#contentWindow").css({"top":"-200px"})
+            $("#contentWindow").css({"width":"50%"})
+
+            $(".contact").css({"overflow":"hidden"});      
+            $(".contact").css({"top":"0px"})
+            $(".contact").fadeOut("fast")
+            
+            $(".portfolio").css({"display":"none"});
+            $(".aboutMe").css({"display":"none"});
+            
+            $(".contact").data("visible", false)
+            $(".aboutMe").data("visible", false)
+            $(".portfolio").data("visible", false)
+        }
+    })
 })
