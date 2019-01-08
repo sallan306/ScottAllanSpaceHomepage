@@ -81,7 +81,7 @@ $(document).ready(function(){
             $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"})
             $(".portfolio").css({"overflow":"auto"});
-            $(".portfolio").css({"height":"480px"});
+            // $(".portfolio").css({"height":"80%"});
             setTimeout(function() {
                 $(".portfolio").fadeIn(300)
             },200)
