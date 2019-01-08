@@ -51,6 +51,9 @@
           }
         }
         /* ---------------------------------------------END SPACE BACKGROUND --------------------------------- */
+
+        /* ---------------------------------------------START GLOBAL CSS --------------------------------- */
+        
         html, body {
           font-family: 'Open Sans', sans-serif;
           color: rgb(197, 193, 218);
@@ -139,7 +142,7 @@
         }
         .imageBox {
           position: relative;
-          width: 33.3%;
+          width: 98%;
           float: left;
           height: 50%;
         }
@@ -160,6 +163,7 @@
           }
         }
         /* --------------------------END MEDIA QUERIES ------------------------------------------------- */
+
         /* --------------------------SCROLLBAR --------------------------------------------------------- */
         ::-webkit-scrollbar {
             width: 5px;
@@ -174,7 +178,48 @@
             background: #555; 
         }
         /* ---------------------------------------END SCROLLBAR ----------------------------------------- */
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
 
+        /* Modal Content/Box */
+        .modal-content {
+          background-color: #fefefe;
+          margin: 15% auto; /* 15% from the top and centered */
+          padding: 20px;
+          /* border-top: 30%; */
+          border: 1px solid #888;
+          width: 60%; /* Could be more or less, depending on screen size */
+          height: 35%;
+        }
+        .modal-image {
+          float: left;
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
           /* ------------------------------------SCREENS BELOW 1100PX ------------------------------------------- */
           @media only screen and (max-width: 1100px) {
             #myName {
@@ -185,6 +230,13 @@
             }
             #contentWindow {
               width: 30%
+            }
+            .portfolio {
+              width: 100%;
+              overflow: initial;
+            }
+            .portBtn {
+              margin: 5px;
             }
         }
           /* ------------------------------------END SCREENS BELOW 1100PX ------------------------------------------- */
@@ -199,6 +251,13 @@
             }
             #contentWindow {
               width: 40%
+            }
+            .portfolio {
+              width: 70%;
+            }
+            .portfolioImage {
+              margin: 5px;
+              border: 10px;
             }
         }
           /* ------------------------------------END SCREENS BELOW 1000PX ------------------------------------------- */
@@ -220,7 +279,7 @@
               height: 60%;
             }
             .imageBox {
-            width: 50%;
+            width: 100%;
             height: 50%
             }
             .portfolio {
@@ -336,22 +395,36 @@
             </div>
             <div class="portfolio mainContent" data-visible="false">
               <div class="imageBox">
-                <a href="https://sallan306.github.io/SunnyWeekend/"><img class="portfolioImage" src="images/1-Sunny.png" alt="SunnyWeekend"/></a>
-                <a href="https://brewstash.herokuapp.com/"><img class="portfolioImage" src="images/2-Brew.png"  alt="Brewstash"/></a>
-                <!-- <a href="https://sallan306.github.io/SunnyWeekend/"><img class="portfolioImage" src="images/1-Sunny.png" alt="SunnyWeekend"/></a>
-                <a href="https://sallan306.github.io/SunnyWeekend/"><img class="portfolioImage" src="images/1-Sunny.png" alt="SunnyWeekend"/></a>
-                <a href="https://sallan306.github.io/SunnyWeekend/"><img class="portfolioImage" src="images/1-Sunny.png" alt="SunnyWeekend"/></a>
-                <a href="https://sallan306.github.io/SunnyWeekend/"><img class="portfolioImage" src="images/1-Sunny.png" alt="SunnyWeekend"/></a> -->
+                <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Some text in the Modal..</p>
+                </div>
+
               </div>
+              <button class="portBtn" id="portBtn1"><img class="portfolioImage" src="images/1-Sunny.png" alt="SunnyWeekend"/></button>
+              <button class="portBtn" id="portBtn2"><img class="portfolioImage" src="images/2-Brew.png"  alt="Brewstash"/></button>
+              <button class="portBtn" id="portBtn3"><img class="portfolioImage" src="images/3-Giraffe.png"  alt="Giraffe Trivia"/></button>
+              <button class="portBtn" id="portBtn4"><img class="portfolioImage" src="images/1-Sunny.png" alt="SunnyWeekend"/></button>
+              <button class="portBtn" id="portBtn5"><img class="portfolioImage" src="images/2-Brew.png"  alt="Brewstash"/></button>
+              <button class="portBtn" id="portBtn6"><img class="portfolioImage" src="images/3-Giraffe.png"  alt="Giraffe Trivia"/></button>
+              </div>
+
             </div>  
             <div class="contact mainContent" data-visible="false">
                 <p class=paragraph1>
-                   You can reach me for professional inquiries by leaving a comment below, or contact me via email, at<br> <a href = "mailto:sallan306@gmail.com"> sallan306@gmail.com </a> <br> I am also currently accepting freelance work, and contact me for the chance to win for-free web services!
+                   You can reach me for professional inquiries by leaving a comment below, or contact me via email, at<br> <br><a href = "mailto:sallan306@gmail.com"> sallan306@gmail.com </a><br> <br> I am also currently accepting freelance work, and contact me for the chance to win for-free web services!
                 </p>
-                <p class="paragraph2">
-                    Recently I have been learning Web Development so that I can broaden my skillset and dive into a career field that can sustain me and grow my knowledge of programming 
-                    languages, so that I can round off my weaker programming skills and be able to design applications, games, and other unique corners of the internet.
-                </p>
+                <form>
+                  <input type="email" name="" id=""><br><br>
+                  <input type="text" width="40%"name=""  id=""><br><br>
+                  <button type="submit">Submit</button>
+                </form>
             </div>
           </div>
         </div>
