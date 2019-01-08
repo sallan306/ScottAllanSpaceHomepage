@@ -37,23 +37,27 @@ $('.img-parallax').each(function(){
       }
     });
   });
+
+var f = document.getElementById('contentWindow')
+
 $(document).ready(function(){
     $("#aboutMeButton").on("click", function() {
 
         if ($(".aboutMe").data("visible") === false) {
-            $("#contentWindow").css({"width":"80%"})
-            $("#contentWindow").css({"height":"85%"})
-            $(".aboutMe").css({"overflow":"auto"});
-            setTimeout(function() {
-                $(".aboutMe").fadeIn(300)
-            },200)   
-            
-            $(".portfolio").css({"display":"none"})
-            $(".contact").css({"display":"none"})
+                $("#contentWindow").css({"width":"80%"})
+                $("#contentWindow").css({"height":"85%"})
+                f.style.transform = 'translateY(-40%)';
+                $(".aboutMe").css({"overflow":"auto"});
+                setTimeout(function() {
+                    $(".aboutMe").fadeIn(300)
+                },200)   
+                
+                $(".portfolio").css({"display":"none"})
+                $(".contact").css({"display":"none"})
 
-            $(".aboutMe").data("visible", true)
-            $(".portfolio").data("visible", false)
-            $(".contact").data("visible", false)
+                $(".aboutMe").data("visible", true)
+                $(".portfolio").data("visible", false)
+                $(".contact").data("visible", false)
         }
         else if ($(".aboutMe").data("visible") === true) {
 
@@ -81,7 +85,7 @@ $(document).ready(function(){
             $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"})
             $(".portfolio").css({"overflow":"auto"});
-            // $(".portfolio").css({"height":"80%"});
+            f.style.transform = 'translateY(-40%)';
             setTimeout(function() {
                 $(".portfolio").fadeIn(300)
             },200)
@@ -117,6 +121,7 @@ $(document).ready(function(){
             $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"});
             $(".contact").css({"overflow":"auto"});
+            f.style.transform = 'translateY(-40%)';
             setTimeout(function() {
                 $(".contact").fadeIn(300)
             },200)      

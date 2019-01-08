@@ -69,7 +69,7 @@
         }
         #contentWindow {
           position: relative;
-          top:5%;
+          top:40%;
           width: 25%;
           height: 15%;
           background-color: rgba(30, 85, 95, 0.9);
@@ -79,10 +79,12 @@
           margin: auto;
           box-shadow: -20px -15px 20px 0px black;
           border-radius: 20px;
-          transition: width 300ms ease-out, height 300ms ease-out;
+          transition: width 500ms ease-out, height 500ms ease-out;
+          
         }
         .customButton, #myName {
           background: -webkit-linear-gradient(white, #38495a);
+          background-clip: border-box;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           border: none;
@@ -128,7 +130,7 @@
         .paragraph1, .paragraph2 {
           color: rgba(206, 206, 240, 0.9);
           font-size: 20px;
-          text-align: left;
+          text-align: center;
           padding-right: 50px;
           padding-left: 50px;
         }
@@ -160,11 +162,10 @@
         /* --------------------------END MEDIA QUERIES ------------------------------------------------- */
         /* --------------------------SCROLLBAR --------------------------------------------------------- */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
-            background: #36464c;
-            box-shadow: inset 0 0 5px grey; 
+            background: #43101087;
         }
         ::-webkit-scrollbar-thumb {
             background: rgba(31, 67, 78, 0.65);
@@ -280,6 +281,7 @@
           }
           .mainContent {
             height: 90%;
+            background: #43101087;
           }
           #aboutMePic {
             padding-left: 0px;
@@ -343,9 +345,8 @@
               </div>
             </div>  
             <div class="contact mainContent" data-visible="false">
-                <img id="aboutMePic" src="images/me.jpg" data-visible="false" alt="a picture of me">
                 <p class=paragraph1>
-                   You can reach me for professional inquiries by leaving a comment below, or contact me via email, at <a href = "mailto:sallan306@gmail.com"> sallan306@gmail.com </a> I am also currently accepting freelance work, and also contact me for the chance to win for-free web services!
+                   You can reach me for professional inquiries by leaving a comment below, or contact me via email, at<br> <a href = "mailto:sallan306@gmail.com"> sallan306@gmail.com </a> <br> I am also currently accepting freelance work, and contact me for the chance to win for-free web services!
                 </p>
                 <p class="paragraph2">
                     Recently I have been learning Web Development so that I can broaden my skillset and dive into a career field that can sustain me and grow my knowledge of programming 
