@@ -287,6 +287,7 @@ footer {
   .mainContent {
     height: 90%;
     background: #43101087;
+    width: 100%
   }
   #aboutMePic {
     padding-left: 0px;
@@ -304,5 +305,9 @@ footer {
   }
   .imageBox {
     width: 100%;
+    left: 0%;
   } 
+  a {
+    color: white
+  }
 }
