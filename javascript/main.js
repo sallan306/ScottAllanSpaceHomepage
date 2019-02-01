@@ -30,10 +30,10 @@ function closeContentWindow() {
     
     $(".portfolio").css({"display":"none"})
     $(".aboutMe").css({"display":"none"})
-    
-    $(".contact").data("visible", false)
-    $(".aboutMe").data("visible", false)
-    $(".portfolio").data("visible", false)
+
+    $(".aboutMe").attr('data-visible', "false");
+    $(".portfolio").attr('data-visible', "false");
+    $(".contact").attr('data-visible', "false");
 
     $("#contentWindow").css({"height":"15%"})
     setTimeout(()=>{changeContentWindowWidth()},200)
@@ -45,60 +45,50 @@ function closeContentWindow() {
 
 function openContentWindow(container) {
     $("#contentWindow").css({"transform":'translateY(-35vh)'});
-    setTimeout(()=>{$("#contentWindow").css({"width":"80%"})},200)
-    setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},400)
+    setTimeout(()=>{$("#contentWindow").css({"width":"80%"})}, 100)
+    setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},200)
     $(container).css({"overflow":"auto"});
 
-    $(".portfolio").data("visible", false)
-    $(".aboutMe").data("visible",   false)
-    $(".contact").data("visible",   false)
+    $(".aboutMe").attr('data-visible', "false");
+    $(".portfolio").attr('data-visible', "false");
+    $(".contact").attr('data-visible', "false");
+
     $(".portfolio").css({"display": "none"})
     $(".aboutMe").css({"display":   "none"})
     $(".contact").css({"display":   "none"})
 
-    $(container).data("visible", true)
+    $(container).attr('data-visible', "true");
 
-    setTimeout(() => {$(container).fadeIn(300)},500)   
+    setTimeout(() => {$(container).fadeIn(300)},400)   
 
 }
 
 $("#aboutMeButton").on("click", () => {
 
-    if ($(".aboutMe").data("visible") === false) {
+    if ($(".aboutMe").attr('data-visible') === "false") {
         openContentWindow(".aboutMe")
     }
-    else if ($(".aboutMe").data("visible") === true) {
+    else {
         closeContentWindow()
     }
 })
 
 
 $("#portfolioButton").on("click",() => {
-    if ($(".portfolio").data("visible") === false) {
+    if ($(".portfolio").attr('data-visible') === "false") {
         openContentWindow(".portfolio")
     }
-    else if ($(".portfolio").data("visible") === true){
+    else if ($(".portfolio").attr('data-visible') === "true"){
         closeContentWindow()
     }
 })
 
 
 $("#contactButton").on("click", () => {
-    if ($(".contact").data("visible") === false) {
+    if ($(".contact").attr('data-visible') === "false") {
         openContentWindow(".contact")
-        $(".contact").css({"overflow":"auto"});
-        
-        $(".contact").data("visible", true)
-        
-        $(".aboutMe").data("visible", false)
-        $(".portfolio").data("visible", false)
-
-
-        setTimeout(()=> {$(".contact").fadeIn(300)},700)      
-        $(".aboutMe").fadeOut(100)
-        $(".portfolio").fadeOut(100)
     }
-    else if($(".contact").data("visible") === true) {
+    else if($(".contact").attr('data-visible') === "true") {
 
         closeContentWindow()
     }
@@ -111,7 +101,7 @@ btn1.onclick = () => {
         $(".modal-content").html("<img class='modal-image' src='images/1-Sunny.png' alt='Sunny Weekend'/>")
         $(".modal-content").append("<p>Hard time deciding where to travel? Let us pick for you! All you need is a free weekend and a sense of adventure.</p><input type='button' class='modalButtonSunny' value='Sunny Weekend' />")
         $(".modalButtonSunny").on("click",  () => window.location.href="https://sallan306.github.io/SunnyWeekend/")
-        modal.style.display = "block";
+        $(".modal").fadeIn()
     }
     else {
         window.location.href = "https://sallan306.github.io/SunnyWeekend/"
@@ -122,7 +112,7 @@ btn2.onclick = () => {
         $(".modal-content").html("<img class='modal-image' src='images/2-Brew.png' alt='Brewstash'/>")
         $(".modal-content").append("<p>The Brewstash App was designed to improve the user experience of drinking at the many bars in Austin</p><input type='button' class='modalButtonBrew' value='Brewstash' />")
         $(".modalButtonBrew").on("click",  () => window.location.href="https://brewstash.herokuapp.com/")
-        modal.style.display = "block";
+        $(".modal").fadeIn()
     }
     else {
         window.location.href = "https://brewstash.herokuapp.com/"
@@ -134,7 +124,7 @@ btn3.onclick = () => {
         $(".modal-content").html("<img style='width:200px;height:200px' class='modal-image' src='images/3-Ido.png' alt='I Do'/>")
         $(".modal-content").append("<p>Have an event to plan? Need to get hundreds of people's contact information ASAP? Have our website help your guests help you!</p><input type='button' class='modalButtonIdo' value='I Do' />")
         $(".modalButtonIdo").on("click",  () => window.location.href="https://i-dooo.herokuapp.com/")
-        modal.style.display = "block";
+        $(".modal").fadeIn()
     }
     else {
         window.location.href = "https://i-dooo.herokuapp.com/"
@@ -142,10 +132,10 @@ btn3.onclick = () => {
 
 }
 
-span.onclick = () => modal.style.display = "none";
+span.onclick = () => $(".modal").fadeOut();
 
 window.onclick = function(event) {
     if (event.target === modal) {
-      modal.style.display = "none";
+        $(".modal").fadeOut();
     }
 }
