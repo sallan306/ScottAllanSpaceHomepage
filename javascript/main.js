@@ -1,56 +1,111 @@
-// I know that the code could be better.
-// If you have some tips or improvement, please let me know.
-
-$('.img-parallax').each(function(){
-    var img = $(this);
-    var imgParent = $(this).parent();
-    function parallaxImg () {
-      var speed = img.data('speed');
-      var imgY = imgParent.offset().top;
-      var winY = $(this).scrollTop();
-      var winH = $(this).height();
-      var parentH = imgParent.innerHeight();
-  
-  
-      // The next pixel to show on screen      
-      var winBottom = winY + winH;
-  
-      // If block is shown on screen
-      if (winBottom > imgY && winY < imgY + parentH) {
-        // Number of pixels shown after block appear
-        var imgBottom = ((winBottom - imgY) * speed);
-        // Max number of pixels until block disappear
-        var imgTop = winH + parentH;
-        // Porcentage between start showing until disappearing
-        var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
-      }
-      img.css({
-        top: imgPercent + '%',
-        transform: 'translate(-50%, -' + imgPercent + '%)'
-      });
+const   modal = document.getElementById('myModal'),
+        btn1 = document.getElementById("portBtn1"),
+        btn2 = document.getElementById("portBtn2"),
+        btn3 = document.getElementById("portBtn3"),
+        span = document.getElementsByClassName("close")[0],
+        width450 = window.matchMedia("(max-width: 450px)"),
+        width750 = window.matchMedia("(max-width: 750px)"),
+        width1000 = window.matchMedia("(max-width: 1000px)");
+    
+function changeContentWindowWidth() {
+    if (width450.matches) { 
+        console.log("under 450px")
+        $("#contentWindow").css({"width":"80%"})
+    } else if (width750.matches) {
+        console.log("under 750")
+        $("#contentWindow").css({"width":"50%"})
     }
-    $(document).on({
-      scroll: function () {
-        parallaxImg();
-      }, ready: function () {
-        parallaxImg();
-      }
-    });
-  });
+    else if (width1000.matches) {
+        console.log("under 1000")
+        $("#contentWindow").css({"width":"40%"})
+    } else {
+        console.log("above 1000")
+        $("#contentWindow").css({"width":"25%"})
+    }
+}
 
-$(document).ready(function(){
-    // Get the modal
-var modal = document.getElementById('myModal');
+function closeContentWindow() {
 
-// Get the button that opens the modal
-var btn1 = document.getElementById("portBtn1");
-var btn2 = document.getElementById("portBtn2");
-var btn3 = document.getElementById("portBtn3");
+    $(".contact").css({"overflow":"hidden"});      
+    
+    $(".portfolio").css({"display":"none"})
+    $(".aboutMe").css({"display":"none"})
+    
+    $(".contact").data("visible", false)
+    $(".aboutMe").data("visible", false)
+    $(".portfolio").data("visible", false)
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    $("#contentWindow").css({"height":"15%"})
+    setTimeout(()=>{changeContentWindowWidth()},200)
+    setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},400)
+    $(".portfolio").fadeOut(50)
+    $(".aboutMe").fadeOut(50)
+    $(".contact").fadeOut(50)
+}
 
-// When the user clicks on the button, open the modal 
+function openContentWindow(container) {
+    $("#contentWindow").css({"transform":'translateY(-35vh)'});
+    setTimeout(()=>{$("#contentWindow").css({"width":"80%"})},200)
+    setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},400)
+    $(container).css({"overflow":"auto"});
+
+    $(".portfolio").data("visible", false)
+    $(".aboutMe").data("visible",   false)
+    $(".contact").data("visible",   false)
+    $(".portfolio").css({"display": "none"})
+    $(".aboutMe").css({"display":   "none"})
+    $(".contact").css({"display":   "none"})
+
+    $(container).data("visible", true)
+
+    setTimeout(() => {$(container).fadeIn(300)},500)   
+
+}
+
+$("#aboutMeButton").on("click", () => {
+
+    if ($(".aboutMe").data("visible") === false) {
+        openContentWindow(".aboutMe")
+    }
+    else if ($(".aboutMe").data("visible") === true) {
+        closeContentWindow()
+    }
+})
+
+
+$("#portfolioButton").on("click",() => {
+    if ($(".portfolio").data("visible") === false) {
+        openContentWindow(".portfolio")
+    }
+    else if ($(".portfolio").data("visible") === true){
+        closeContentWindow()
+    }
+})
+
+
+$("#contactButton").on("click", () => {
+    if ($(".contact").data("visible") === false) {
+        openContentWindow(".contact")
+        $(".contact").css({"overflow":"auto"});
+        
+        $(".contact").data("visible", true)
+        
+        $(".aboutMe").data("visible", false)
+        $(".portfolio").data("visible", false)
+
+
+        setTimeout(()=> {$(".contact").fadeIn(300)},700)      
+        $(".aboutMe").fadeOut(100)
+        $(".portfolio").fadeOut(100)
+    }
+    else if($(".contact").data("visible") === true) {
+
+        closeContentWindow()
+    }
+})
+
+
+
 btn1.onclick = () => {
     if(screen.width > 450 ) {
         $(".modal-content").html("<img class='modal-image' src='images/1-Sunny.png' alt='Sunny Weekend'/>")
@@ -86,136 +141,11 @@ btn3.onclick = () => {
     }
 
 }
-// When the user clicks on <span> (x), close the modal
+
 span.onclick = () => modal.style.display = "none";
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-}
-    $("#aboutMeButton").on("click", function() {
-
-        if ($(".aboutMe").data("visible") === false) {
-            $("#contentWindow").css({"transform":'translateY(-40%)'});
-            $("#contentWindow").css({"width":"80%"})
-            $("#contentWindow").css({"height":"85%"})
-            $(".aboutMe").css({"overflow":"auto"});
-            
-            $(".portfolio").css({"display":"none"})
-            $(".contact").css({"display":"none"})
-            
-            $(".aboutMe").data("visible", true)
-            $(".portfolio").data("visible", false)
-            $(".contact").data("visible", false)
-
-            setTimeout(() => {$(".aboutMe").fadeIn(300)},400)   
-        }
-        else if ($(".aboutMe").data("visible") === true) {
-
-            $("#contentWindow").css({"height":"15%"})
-            
-            $(".aboutMe").css({"overflow":"hidden"});
-            
-            $(".portfolio").css({"display":"none"})
-            $(".contact").css({"display":"none"})
-            
-            $(".aboutMe").data("visible", false)
-            $(".portfolio").data("visible", false)
-            $(".contact").data("visible", false)
-
-            setTimeout(() =>{changeContentWindowWidth()},500)
-            $(".aboutMe").fadeOut(50)
-        }
-    })
-
-
-    $("#portfolioButton").on("click", function() {
-        if ($(".portfolio").data("visible") === false) {
-
-            $("#contentWindow").css({"width":"80%"})
-            $("#contentWindow").css({"height":"85%"})
-            $(".portfolio").css({"overflow":"auto"});
-            $("#contentWindow").css({"transform":'translateY(-40%)'});
-            
-            
-            $(".portfolio").data("visible", true)
-            $(".aboutMe").data("visible", false)
-            $(".contact").data("visible", false)
-
-            setTimeout(() => {$(".portfolio").fadeIn(300)},400)
-            $(".aboutMe").fadeOut(100)
-            $(".contact").fadeOut(100)
-        }
-        else if ($(".portfolio").data("visible") === true){
-
-            $("#contentWindow").css({"height":"15%"})
-            $(".portfolio").css({"overflow":"hidden"});    
-            
-            $(".portfolio").data("visible", false)
-            $(".aboutMe").data("visible", false)
-            $(".contact").data("visible", false)
-            
-            setTimeout(()=>{changeContentWindowWidth()},500)
-            $(".portfolio").fadeOut(50)
-            $(".aboutMe").fadeOut(100)
-            $(".contact").fadeOut(100)
-        }
-    })
-
-
-    $("#contactButton").on("click", function() {
-        if ($(".contact").data("visible") === false) {
-            $("#contentWindow").css({"width":"80%"})
-            $("#contentWindow").css({"height":"85%"});
-            $("#contentWindow").css({"transform":'translateY(-40%)'});
-            $(".contact").css({"overflow":"auto"});
-            
-            $(".contact").data("visible", true)
-            
-            $(".aboutMe").data("visible", false)
-            $(".portfolio").data("visible", false)
-            $(".portfolio").css({"display":"none"})
-
-            setTimeout(()=> {$(".contact").fadeIn(300)},400)      
-            $(".aboutMe").fadeOut(100)
-        }
-        else if($(".contact").data("visible") === true) {
-
-            $("#contentWindow").css({"height":"15%"})
-            $(".contact").css({"overflow":"hidden"});      
-            
-            $(".portfolio").css({"display":"none"})
-            $(".aboutMe").css({"display":"none"})
-            
-            $(".contact").data("visible", false)
-            $(".aboutMe").data("visible", false)
-            $(".portfolio").data("visible", false)
-
-            setTimeout(()=>{changeContentWindowWidth()},500)
-            $(".contact").fadeOut(50)
-        }
-    })
-})
-function changeContentWindowWidth() {
-    if (width450.matches) { 
-        console.log("under 450px")
-        $("#contentWindow").css({"width":"80%"})
-    } else if (width750.matches) {
-        console.log("under 750")
-        $("#contentWindow").css({"width":"50%"})
-    }
-    else if (width1000.matches) {
-        console.log("under 1000")
-        $("#contentWindow").css({"width":"40%"})
-    } else {
-        console.log("about 1000")
-        $("#contentWindow").css({"width":"25%"})
+    if (event.target === modal) {
+      modal.style.display = "none";
     }
 }
-
-var width450 = window.matchMedia("(max-width: 450px)"),
-    width750 = window.matchMedia("(max-width: 750px)"),
-    width1000 = window.matchMedia("(max-width: 1000px)")
- // Call listener function at run time

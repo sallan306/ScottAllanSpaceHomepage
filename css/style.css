@@ -27,7 +27,7 @@ body {
   margin: auto;
   box-shadow: -20px -15px 20px 0px black;
   border-radius: 20px;
-  transition: width 500ms ease-out, height 500ms ease-out;
+  transition: 300ms ease-out
   
 }
 .customButton, #myName {
@@ -49,6 +49,7 @@ body {
   opacity: .55;
   transition: 1s;
   font-size: 20px;
+  outline:none;
 }
 #myName {
   position:relative;
@@ -110,7 +111,7 @@ footer {
   margin-top: 10%;
 }
 
-#portBtn1, #portBtn2, #portBtn3 {
+.portBtn {
   width: 20vw;
   height: 20vw;
 }
@@ -208,6 +209,9 @@ footer {
     .portBtn {
       margin: 5px;
 
+    }
+    .paragraph1 {
+      font-size: 17px;
     }
 }
   /* ------------------------------------END SCREENS BELOW 1100PX ------------------------------------------- */
@@ -311,8 +315,8 @@ footer {
   }
   .mainContent {
     height: 65vh; 
-    background: #43101087;
-    width: 100%
+    width: 100%;
+    overflow: auto;
   }
   #aboutMePic {
     padding-left: 0px;
@@ -325,7 +329,7 @@ footer {
   .paragraph1, .paragraph2 {
     padding-left: 5px;
     padding-right: 5px;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 4px;
   }
   .imageBox {
