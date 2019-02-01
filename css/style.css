@@ -56,20 +56,21 @@ body {
   font-size: 50px;
   font-stretch: expanded;
 }
-.aboutMe, .portfolio, .contact {
+.mainContent {
   text-align: center;
   overflow: hidden;
   width: 100%;
   margin: 0px auto;
   display: none;
-  height: 85%;  
+  height: 95%;  
   font-size: 20px;
-  position: relative;
-  top: 0px;
+  margin-top: 5vh;
 }
 #aboutMePic{
-  width:100px;
-  height:150px;
+  width: 22vw;
+  height: 30vw;
+  max-width: 350px;
+  max-height: 410px;
   padding-left: 50px;
   padding-top: 25px;
   padding-right:20px;
@@ -83,14 +84,13 @@ body {
   padding-left: 50px;
 }
 .portfolio {
-  top: 25px;
+  margin-top: 12.5vh;
 }
 .imageBox {
   position: relative;
-  width: 75%;
   float: left;
   height: 50%;
-  left: 12.5%;
+  width: 100%;
 }
 footer {
   z-index: 100;
@@ -101,6 +101,30 @@ footer {
   height: 30px;
   font-size: 10px;
   padding-top:10px;
+}
+.portfolioImage {
+  width: 20vw;
+  height: 20vw;
+}
+.modalButtonSunny, .modalButtonBrew, .modalButtonIdo {
+  margin-top: 10%;
+}
+
+#portBtn1, #portBtn2, #portBtn3 {
+  width: 20vw;
+  height: 20vw;
+}
+#portBtn1 {
+  background:url(../images/1-Sunny.png) no-repeat;
+  background-size: 100%;
+}
+#portBtn2 {
+  background:url(../images/2-Brew.png) no-repeat;
+  background-size: 100%;
+}
+#portBtn3 {
+  background:url(../images/3-Ido.png) no-repeat;
+  background-size: 100%;
 }
 /* --------------------------MEDIA QUERIES ----------------------------------------------------- */
 @media (hover: hover) {
@@ -183,6 +207,7 @@ footer {
     }
     .portBtn {
       margin: 5px;
+
     }
 }
   /* ------------------------------------END SCREENS BELOW 1100PX ------------------------------------------- */
@@ -268,7 +293,7 @@ footer {
     font-size: 12px;
     width:33.33%;
     float: left;
-    font-size: 18px;
+    font-size: 17px;
     top: 0%;
     font-stretch: expanded;
   }
@@ -285,7 +310,7 @@ footer {
     height: 85%;
   }
   .mainContent {
-    height: 90%;
+    height: 65vh; 
     background: #43101087;
     width: 100%
   }
@@ -307,6 +332,15 @@ footer {
     width: 100%;
     left: 0%;
   } 
+  .portfolioImage {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .portBtn {
+    width: 70vw;
+    height: 70vw;
+  }
   a {
     color: white
   }

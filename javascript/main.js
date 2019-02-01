@@ -38,8 +38,6 @@ $('.img-parallax').each(function(){
     });
   });
 
-var f = document.getElementById('contentWindow')
-
 $(document).ready(function(){
     // Get the modal
 var modal = document.getElementById('myModal');
@@ -79,8 +77,8 @@ btn2.onclick = () => {
 btn3.onclick = () => {
     if(screen.width > 450 ) {
         $(".modal-content").html("<img style='width:200px;height:200px' class='modal-image' src='images/3-Ido.png' alt='I Do'/>")
-        $(".modal-content").append("<p>Have an event to plan? Need to get hundreds of people's contact information ASAP? Have our website help your guests help you!</p><input type='button' class='modalButtonGiraffe' value='I Do' />")
-        $(".modalButtonGiraffe").on("click",  () => window.location.href="https://i-dooo.herokuapp.com/")
+        $(".modal-content").append("<p>Have an event to plan? Need to get hundreds of people's contact information ASAP? Have our website help your guests help you!</p><input type='button' class='modalButtonIdo' value='I Do' />")
+        $(".modalButtonIdo").on("click",  () => window.location.href="https://i-dooo.herokuapp.com/")
         modal.style.display = "block";
     }
     else {
@@ -93,44 +91,42 @@ span.onclick = () => modal.style.display = "none";
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target === modal) {
     modal.style.display = "none";
   }
 }
     $("#aboutMeButton").on("click", function() {
 
         if ($(".aboutMe").data("visible") === false) {
-                $("#contentWindow").css({"width":"80%"})
-                $("#contentWindow").css({"height":"85%"})
-                f.style.transform = 'translateY(-40%)';
-                $(".aboutMe").css({"overflow":"auto"});
-                setTimeout(function() {
-                    $(".aboutMe").fadeIn(300)
-                },200)   
-                
-                $(".portfolio").css({"display":"none"})
-                $(".contact").css({"display":"none"})
+            $("#contentWindow").css({"transform":'translateY(-40%)'});
+            $("#contentWindow").css({"width":"80%"})
+            $("#contentWindow").css({"height":"85%"})
+            $(".aboutMe").css({"overflow":"auto"});
+            
+            $(".portfolio").css({"display":"none"})
+            $(".contact").css({"display":"none"})
+            
+            $(".aboutMe").data("visible", true)
+            $(".portfolio").data("visible", false)
+            $(".contact").data("visible", false)
 
-                $(".aboutMe").data("visible", true)
-                $(".portfolio").data("visible", false)
-                $(".contact").data("visible", false)
+            setTimeout(() => {$(".aboutMe").fadeIn(300)},400)   
         }
         else if ($(".aboutMe").data("visible") === true) {
 
             $("#contentWindow").css({"height":"15%"})
-            setTimeout(function(){
-                changeContentWindowWidth()
-            },500)
-
+            
             $(".aboutMe").css({"overflow":"hidden"});
-            $(".aboutMe").fadeOut(100)
             
             $(".portfolio").css({"display":"none"})
             $(".contact").css({"display":"none"})
-
+            
             $(".aboutMe").data("visible", false)
             $(".portfolio").data("visible", false)
             $(".contact").data("visible", false)
+
+            setTimeout(() =>{changeContentWindowWidth()},500)
+            $(".aboutMe").fadeOut(50)
         }
     })
 
@@ -141,31 +137,28 @@ window.onclick = function(event) {
             $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"})
             $(".portfolio").css({"overflow":"auto"});
-            f.style.transform = 'translateY(-40%)';
-            setTimeout(function() {
-                $(".portfolio").fadeIn(300)
-            },200)
+            $("#contentWindow").css({"transform":'translateY(-40%)'});
             
             
-            $(".aboutMe").fadeOut(100)
-            $(".contact").fadeOut(100)
             $(".portfolio").data("visible", true)
             $(".aboutMe").data("visible", false)
             $(".contact").data("visible", false)
+
+            setTimeout(() => {$(".portfolio").fadeIn(300)},400)
+            $(".aboutMe").fadeOut(100)
+            $(".contact").fadeOut(100)
         }
         else if ($(".portfolio").data("visible") === true){
 
             $("#contentWindow").css({"height":"15%"})
-            setTimeout(function(){
-                changeContentWindowWidth()
-            },500)
             $(".portfolio").css({"overflow":"hidden"});    
-            $(".portfolio").fadeOut(50)
             
             $(".portfolio").data("visible", false)
             $(".aboutMe").data("visible", false)
             $(".contact").data("visible", false)
-
+            
+            setTimeout(()=>{changeContentWindowWidth()},500)
+            $(".portfolio").fadeOut(50)
             $(".aboutMe").fadeOut(100)
             $(".contact").fadeOut(100)
         }
@@ -176,48 +169,44 @@ window.onclick = function(event) {
         if ($(".contact").data("visible") === false) {
             $("#contentWindow").css({"width":"80%"})
             $("#contentWindow").css({"height":"85%"});
+            $("#contentWindow").css({"transform":'translateY(-40%)'});
             $(".contact").css({"overflow":"auto"});
-            f.style.transform = 'translateY(-40%)';
-            setTimeout(function() {
-                $(".contact").fadeIn(300)
-            },200)      
-     
-            
             
             $(".contact").data("visible", true)
-
+            
             $(".aboutMe").data("visible", false)
             $(".portfolio").data("visible", false)
-            $(".aboutMe").fadeOut(100)
             $(".portfolio").css({"display":"none"})
+
+            setTimeout(()=> {$(".contact").fadeIn(300)},400)      
+            $(".aboutMe").fadeOut(100)
         }
         else if($(".contact").data("visible") === true) {
 
             $("#contentWindow").css({"height":"15%"})
-            setTimeout(function(){
-                changeContentWindowWidth()
-            },500)
             $(".contact").css({"overflow":"hidden"});      
-            $(".contact").fadeOut(100)
             
             $(".portfolio").css({"display":"none"})
             $(".aboutMe").css({"display":"none"})
-
+            
             $(".contact").data("visible", false)
             $(".aboutMe").data("visible", false)
             $(".portfolio").data("visible", false)
+
+            setTimeout(()=>{changeContentWindowWidth()},500)
+            $(".contact").fadeOut(50)
         }
     })
 })
 function changeContentWindowWidth() {
-    if (x.matches) { 
+    if (width450.matches) { 
         console.log("under 450px")
         $("#contentWindow").css({"width":"80%"})
-    } else if (y.matches) {
+    } else if (width750.matches) {
         console.log("under 750")
         $("#contentWindow").css({"width":"50%"})
     }
-    else if (z.matches) {
+    else if (width1000.matches) {
         console.log("under 1000")
         $("#contentWindow").css({"width":"40%"})
     } else {
@@ -226,7 +215,7 @@ function changeContentWindowWidth() {
     }
 }
 
-var x = window.matchMedia("(max-width: 450px)"),
-    y = window.matchMedia("(max-width: 750px)"),
-    z = window.matchMedia("(max-width: 1000px)")
+var width450 = window.matchMedia("(max-width: 450px)"),
+    width750 = window.matchMedia("(max-width: 750px)"),
+    width1000 = window.matchMedia("(max-width: 1000px)")
  // Call listener function at run time
