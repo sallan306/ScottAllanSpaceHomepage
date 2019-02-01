@@ -7,6 +7,11 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 body {
   position: relative;
@@ -15,6 +20,7 @@ body {
   text-align: center;
   padding: 0 auto;
 }
+
 #contentWindow {
   position: relative;
   top:40%;
@@ -41,6 +47,7 @@ body {
   position: relative;
   width: 50%;
   top:10px;
+
 }
 .customButton {
   cursor: pointer;
@@ -50,12 +57,14 @@ body {
   transition: 1s;
   font-size: 20px;
   outline:none;
+
 }
 #myName {
   position:relative;
   width: 100%;
   font-size: 60px;
   font-stretch: expanded;
+
 }
 .mainContent {
   text-align: center;
@@ -83,6 +92,11 @@ body {
   text-align: center;
   padding-right: 50px;
   padding-left: 50px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .portfolio {
   margin-top: 12.5vh;
