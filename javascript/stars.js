@@ -1,6 +1,3 @@
-// I know that the code could be better.
-// If you have some tips or improvement, please let me know.
-
 $('.img-parallax').each(function(){
     var img = $(this);
     var imgParent = $(this).parent();
