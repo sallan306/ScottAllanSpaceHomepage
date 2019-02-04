@@ -6,6 +6,8 @@ const   modal = document.getElementById('myModal'),
         width450 = window.matchMedia("(max-width: 450px)"),
         width750 = window.matchMedia("(max-width: 750px)"),
         width1000 = window.matchMedia("(max-width: 1000px)");
+
+var currentWindow = "none"
     
 function changeContentWindowWidth() {
     if (width450.matches) { 
@@ -41,6 +43,8 @@ function closeContentWindow() {
     $(".portfolio").fadeOut(50)
     $(".aboutMe").fadeOut(50)
     $(".contact").fadeOut(50)
+
+    currentWindow = "none"
 }
 
 function openContentWindow(container) {
@@ -61,7 +65,18 @@ function openContentWindow(container) {
 
     setTimeout(() => {$(container).fadeIn(300)},400)   
 
+    currentWindow = container
+
 }
+
+
+setTimeout(() => {
+
+    if (currentWindow === "none") {
+        openContentWindow(".aboutMe")
+    }
+
+},2000)
 
 $("#aboutMeButton").on("click", () => {
 
