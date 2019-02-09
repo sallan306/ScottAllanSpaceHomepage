@@ -8,7 +8,9 @@ const   modal = document.getElementById('myModal'),
         width1000 = window.matchMedia("(max-width: 1000px)");
 
 var currentWindow = "none"
-history.pushState(null, '', 'www.scottallan.com');    
+history.pushState({
+    id: 'homepage'
+}, 'Home | My App', 'http://my-app-url.com/?p=homepage');   
 function changeContentWindowWidth() {
     if (width450.matches) { 
         console.log("under 450px")
