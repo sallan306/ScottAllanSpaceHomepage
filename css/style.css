@@ -247,9 +247,6 @@ footer {
 }
 /* --------------------------END MEDIA QUERIES ------------------------------------------------- */
 
-/* --------------------------SCROLLBAR --------------------------------------------------------- */
-
-/* ---------------------------------------END SCROLLBAR ----------------------------------------- */
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -275,6 +272,7 @@ footer {
 }
 .modal-image {
   float: left;
+  height: 100%;
 }
 
 /* The Close Button */
@@ -332,6 +330,12 @@ footer {
     .portfolioImage {
       margin: 5px;
       border: 10px;
+    }
+    .modalButtonSunny, .modalButtonBrew, .modalButtonIdo {
+      margin-top: 5%;
+    }
+    .modalParagraph {
+      font-size: 16px
     }
 }
   /* ------------------------------------END SCREENS BELOW 1000PX ------------------------------------------- */
