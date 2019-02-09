@@ -54,7 +54,13 @@ a {
   margin: auto;
   box-shadow: -20px -15px 20px 0px black;
   border-radius: 20px;
-  transition: 300ms ease-out
+  transition: 300ms ease-out;
+
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  letter-spacing: 10px;
   
 }
 .contentContainer {
@@ -86,7 +92,9 @@ a {
 #myName {
   position:relative;
   width: 100%;
-  font-size: 60px;
+  font-size: 45px;
+  letter-spacing: 8px;
+  margin-left: 2%;
   font-stretch: expanded;
 
 }
@@ -127,10 +135,11 @@ a {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  letter-spacing: 3px;
 }
-.portfolio {
+/* .portfolio {
   margin-top: 12.5vh;
-}
+} */
 .imageBox {
   position: relative;
   float: left;
@@ -147,12 +156,18 @@ footer {
   font-size: 10px;
   padding-top:10px;
 }
+
+.modalParagraph {
+  font-size: 19px;
+  letter-spacing: 5px;
+  color: #070707;
+}
 .portfolioImage {
   width: 20vw;
   height: 20vw;
 }
 .modalButtonSunny, .modalButtonBrew, .modalButtonIdo {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .portBtn {
@@ -194,8 +209,8 @@ footer {
   width: 40px;
   height: 40px;
   background: #f1f1f1;
-  margin: 25px;
-  border-radius: 30%;
+  margin: 30px;
+  border-radius: 100%;
   box-shadow: 0 5px 15px -5px #00000070;
   color: #1c4f59;
   /* overflow: hidden; */
@@ -290,9 +305,11 @@ footer {
   cursor: pointer;
 }
   /* ------------------------------------SCREENS BELOW 1100PX ------------------------------------------- */
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 1200px) {
     #myName {
-      font-size: 50px;
+      font-size: 45px;
+      letter-spacing: 8px;
+      margin-left: 2%;
     }
     .customButton{
       font-size: 16px;
@@ -317,6 +334,7 @@ footer {
   @media only screen and (max-width: 1000px) {
     #myName {
       font-size: 50px;
+      letter-spacing: 7px;
     }
     .customButton{
       font-size: 16px;
@@ -343,7 +361,13 @@ footer {
   /* ------------------------------------SCREENS BELOW 780PX ------------------------------------------- */
   @media only screen and (max-width: 780px) {
     #myName {
-      font-size: 45px;
+      font-size: 40px;
+    letter-spacing: 3px;
+    }
+    .portBtn {
+      width: 25vw;
+      height: 25vw;
+      border: 0;
     }
     .customButton{
       font-size: 16px;
@@ -351,7 +375,7 @@ footer {
     #contentWindow {
       overflow: none;
       width: 50%;
-      height: 10%
+      height: 13vh;
     }
     .contentContainer {
       height: 80%;
@@ -379,7 +403,28 @@ footer {
     }
 }
 /* ------------------------------------END SCREENS BELOW 780PX ------------------------------------------- */
+@media only screen and (max-width: 550px) {
 
+  .portBtn {
+    width: 40vw;
+    height: 40vw;
+    border: 0;
+  }
+  #contentWindow {
+    height: 13vh;
+  }
+  #myName {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+  #aboutMePic {
+    height: 45%;
+  }
+  .paragraph1 {
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+}
 /* ---------------------------------------SCREENS BELOW 450PX ------------------------------------------ */
 @media only screen and (max-width: 450px) {
   #contentWindow {
@@ -396,7 +441,7 @@ footer {
     letter-spacing: 10px;
   }
   #myName {
-    font-size: 30px; 
+    font-size: 50px;
     position: relative;
     left: 2%;
     font-stretch: expanded;
@@ -418,14 +463,15 @@ footer {
     top: 0%;
     font-stretch: expanded;
   }
-  #aboutMeButton {
-  }
+  /* #aboutMeButton {
+
+  } */
   #portfolioButtion {
     text-align: center;
   }
-  #contactButton {
+  /* #contactButton {
 
-  }
+  } */
   .contentContainer {
     height: 85%;
     position: relative;
@@ -449,7 +495,7 @@ footer {
     background-repeat: no-repeat;
     background-size: 100%;
   }
-  .paragraph1, .paragraph2 {
+  .paragraph1 {
     padding-left: 5px;
     padding-right: 5px;
     font-size: 14px;

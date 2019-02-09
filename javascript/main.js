@@ -9,6 +9,8 @@ const   modal = document.getElementById('myModal'),
 
 var currentWindow = "none"
 
+$("html").append("<input display='none' id='myInput' value='sallan306@gmail.com'>")
+
 function changeContentWindowWidth() {
     if (width450.matches) { 
         console.log("under 450px")
@@ -37,7 +39,7 @@ function closeContentWindow() {
     $(".portfolio").attr('data-visible', "false");
     $(".contact").attr('data-visible', "false");
 
-    $("#contentWindow").css({"height":"15%"})
+    $("#contentWindow").css({"height":"13vh"})
     setTimeout(()=>{changeContentWindowWidth()},200)
     setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},400)
     $(".portfolio").fadeOut(50)
@@ -69,6 +71,26 @@ function openContentWindow(container) {
 
 }
 
+function changeContentWindow(container) {
+
+    $(".aboutMe").attr('data-visible', "false");
+    $(".portfolio").attr('data-visible', "false");
+    $(".contact").attr('data-visible', "false");
+
+    $(".portfolio").fadeOut(200)
+    $(".aboutMe").fadeOut(200)
+    $(".contact").fadeOut(200)
+
+    $(container).attr('data-visible', "true");
+
+    setTimeout(()=> {
+        $(container).fadeIn(200)
+    },300)
+
+    currentWindow = container
+
+}
+
 
 setTimeout(() => {
 
@@ -78,10 +100,31 @@ setTimeout(() => {
 
 },2000)
 
+function copyEmailToClipboard() {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput");
+  console.log(copyText)
+    /* Select the text field */
+    copyText.select()
+  
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+  
+    /* Alert the copied text */
+    $.notify(
+        "Email Copied to Clipboard",
+        "success",
+        { position:"left top" }
+        );
+}
+
 $("#aboutMeButton").on("click", () => {
 
-    if ($(".aboutMe").attr('data-visible') === "false") {
+    if (currentWindow === "none") {
         openContentWindow(".aboutMe")
+    }
+    else if (currentWindow === ".contact" || currentWindow === ".portfolio") {
+        changeContentWindow(".aboutMe")
     }
     else {
         closeContentWindow()
@@ -90,27 +133,32 @@ $("#aboutMeButton").on("click", () => {
 
 
 $("#portfolioButton").on("click",() => {
-    if ($(".portfolio").attr('data-visible') === "false") {
+    if (currentWindow === "none") {
         openContentWindow(".portfolio")
     }
-    else if ($(".portfolio").attr('data-visible') === "true"){
+    else if (currentWindow === ".aboutMe" || currentWindow === ".contact") {
+        changeContentWindow(".portfolio")
+    }
+    else {
         closeContentWindow()
     }
 })
 
 
 $("#contactButton").on("click", () => {
-    if ($(".contact").attr('data-visible') === "false") {
+    if (currentWindow === "none") {
         openContentWindow(".contact")
     }
-    else if($(".contact").attr('data-visible') === "true") {
-
+    else if (currentWindow === ".aboutMe" || currentWindow === ".portfolio") {
+        changeContentWindow(".contact")
+    }
+    else {
         closeContentWindow()
     }
 })
 
 btn1.onclick = () => {
-    if(screen.width > 450 ) {
+    if(window.innerWidth > 780 ) {
         $(".modal-content").html("<img class='modal-image' src='images/1-Sunny.png' alt='Sunny Weekend'/>")
         $(".modal-content").append("<p class='modalParagraph'>Hard time deciding where to travel? Let us pick for you! All you need is a free weekend and a sense of adventure.</p><input type='button' class='modalButtonSunny' value='Sunny Weekend' />")
         $(".modalButtonSunny").on("click",  () => window.location.href="https://sallan306.github.io/SunnyWeekend/")
@@ -120,10 +168,13 @@ btn1.onclick = () => {
         window.location.href = "https://sallan306.github.io/SunnyWeekend/"
     }
 }
+
+
+
 btn2.onclick = () => {
-    if(screen.width > 450 ) {
+    if(window.innerWidth > 780 ) {
         $(".modal-content").html("<img class='modal-image' src='images/2-Brew.png' alt='Brewstash'/>")
-        $(".modal-content").append("<p class='modalParagraph'>The Brewstash App was designed to improve the user experience of drinking at the many bars in Austin</p><input type='button' class='modalButtonBrew' value='Brewstash' />")
+        $(".modal-content").append("<div><p class='modalParagraph'>The Brewstash App was designed to improve the user experience of drinking at the many bars in Austin</p><input type='button' class='modalButtonBrew' value='Brewstash' /></div>")
         $(".modalButtonBrew").on("click",  () => window.location.href="https://brewstash.herokuapp.com/")
         $(".modal").fadeIn()
     }
@@ -133,7 +184,7 @@ btn2.onclick = () => {
 
 }
 btn3.onclick = () => {
-    if(screen.width > 450 ) {
+    if(window.innerWidth > 780 ) {
         $(".modal-content").html("<img class='modal-image' src='images/3-Ido.png' alt='I Do'/>")
         $(".modal-content").append("<p class='modalParagraph'>Have an event to plan? Need to get hundreds of people's contact information ASAP? Have our website help your guests help you!</p><input type='button' class='modalButtonIdo' value='I Do' />")
         $(".modalButtonIdo").on("click",  () => window.location.href="https://i-dooo.herokuapp.com/")
