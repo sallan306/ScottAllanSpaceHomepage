@@ -80,7 +80,7 @@ function changeContentWindow(container) {
     $(".portfolio").fadeOut(200)
     $(".aboutMe").fadeOut(200)
     $(".contact").fadeOut(200)
-
+    $(container).css({"overflow":"auto"});
     $(container).attr('data-visible', "true");
 
     setTimeout(()=> {
