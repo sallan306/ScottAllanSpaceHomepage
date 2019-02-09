@@ -109,12 +109,12 @@ $("#contactButton").on("click", () => {
     }
 })
 
-
+var modalContent = window.getElementsByClassName("modal-content")
 
 btn1.onclick = () => {
     if(screen.width > 450 ) {
-        $(".modal-content").html("<img class='modal-image' src='images/1-Sunny.png' alt='Sunny Weekend'/>")
-        $(".modal-content").append("<p>Hard time deciding where to travel? Let us pick for you! All you need is a free weekend and a sense of adventure.</p><input type='button' class='modalButtonSunny' value='Sunny Weekend' />")
+        modalContent.html("<img class='modal-image' src='images/1-Sunny.png' alt='Sunny Weekend'/>")
+        modalContent.append("<p>Hard time deciding where to travel? Let us pick for you! All you need is a free weekend and a sense of adventure.</p><input type='button' class='modalButtonSunny' value='Sunny Weekend' />")
         $(".modalButtonSunny").on("click",  () => window.location.href="https://sallan306.github.io/SunnyWeekend/")
         $(".modal").fadeIn()
     }
@@ -124,8 +124,8 @@ btn1.onclick = () => {
 }
 btn2.onclick = () => {
     if(screen.width > 450 ) {
-        $(".modal-content").html("<img class='modal-image' src='images/2-Brew.png' alt='Brewstash'/>")
-        $(".modal-content").append("<p>The Brewstash App was designed to improve the user experience of drinking at the many bars in Austin</p><input type='button' class='modalButtonBrew' value='Brewstash' />")
+        modalContent.html("<img class='modal-image' src='images/2-Brew.png' alt='Brewstash'/>")
+        modalContent.append("<p>The Brewstash App was designed to improve the user experience of drinking at the many bars in Austin</p><input type='button' class='modalButtonBrew' value='Brewstash' />")
         $(".modalButtonBrew").on("click",  () => window.location.href="https://brewstash.herokuapp.com/")
         $(".modal").fadeIn()
     }
@@ -136,8 +136,8 @@ btn2.onclick = () => {
 }
 btn3.onclick = () => {
     if(screen.width > 450 ) {
-        $(".modal-content").html("<img style='width:200px;height:200px' class='modal-image' src='images/3-Ido.png' alt='I Do'/>")
-        $(".modal-content").append("<p>Have an event to plan? Need to get hundreds of people's contact information ASAP? Have our website help your guests help you!</p><input type='button' class='modalButtonIdo' value='I Do' />")
+        modalContent.html("<img style='width:200px;height:200px' class='modal-image' src='images/3-Ido.png' alt='I Do'/>")
+        modalContent.append("<p>Have an event to plan? Need to get hundreds of people's contact information ASAP? Have our website help your guests help you!</p><input type='button' class='modalButtonIdo' value='I Do' />")
         $(".modalButtonIdo").on("click",  () => window.location.href="https://i-dooo.herokuapp.com/")
         $(".modal").fadeIn()
     }

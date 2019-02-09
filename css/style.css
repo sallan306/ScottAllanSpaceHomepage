@@ -12,6 +12,7 @@ html, body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
 body {
   position: relative;
@@ -20,7 +21,15 @@ body {
   text-align: center;
   padding: 0 auto;
 }
+a {
+  color: white
+}
 
+.btn i {
+  width: 62%;
+  /* margin: 25px; */
+  overflow: default;
+}
 #contentWindow {
   position: relative;
   top:40%;
@@ -35,6 +44,9 @@ body {
   border-radius: 20px;
   transition: 300ms ease-out
   
+}
+.contentContainer {
+  height: 80%;
 }
 .customButton, #myName {
   background: -webkit-linear-gradient(white, #38495a);
@@ -81,10 +93,16 @@ body {
   height: 30vw;
   max-width: 350px;
   max-height: 410px;
-  padding-left: 50px;
-  padding-top: 25px;
-  padding-right:20px;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right:0px;
+  margin-top: 3vh;
+  margin-left: 8vh;
+  margin-right: 2vh;
   float: left;
+  background-image: url("../images/me.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .paragraph1, .paragraph2 {
   color: rgba(206, 206, 240, 0.9);
@@ -128,6 +146,7 @@ footer {
 .portBtn {
   width: 20vw;
   height: 20vw;
+  border: 0;
 }
 #portBtn1 {
   background:url(../images/1-Sunny.png) no-repeat;
@@ -154,8 +173,8 @@ footer {
 
 .middle{
   top: 50%;
-  transform: translateY(-50%);
-  width: 37%;
+  /* transform: translateY(-50%);
+  width: 37%; */
   text-align: center;
 }
 .btn{
@@ -163,11 +182,11 @@ footer {
   width: 40px;
   height: 40px;
   background: #f1f1f1;
-  margin: 10px;
+  margin: 25px;
   border-radius: 30%;
   box-shadow: 0 5px 15px -5px #00000070;
   color: #1c4f59;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }
 .btn i{
@@ -330,14 +349,28 @@ footer {
       height: 10%
     }
     .contentContainer {
-      height: 60%;
+      height: 80%;
     }
     .imageBox {
-    width: 100%;
-    height: 50%
+      width: 100%;
+      height: 50%
     }
     .portfolio {
       overflow: hidden;
+    }
+    #aboutMePic {
+      margin-top: 0vh;
+      margin-left: 15%;
+      padding-left: 0%;
+      padding-right: 0px;
+      padding-top: 0px;
+      float: none;
+      width: 70%;
+      height: 69%;
+      background-image: url(../images/me-wide.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      max-width: 700px;
     }
 }
 /* ------------------------------------END SCREENS BELOW 780PX ------------------------------------------- */
@@ -381,16 +414,17 @@ footer {
     font-stretch: expanded;
   }
   #aboutMeButton {
-    text-align: left;
   }
   #portfolioButtion {
     text-align: center;
   }
   #contactButton {
-    text-align: right;
+
   }
   .contentContainer {
     height: 85%;
+    position: relative;
+    top: 2vh;
   }
   .mainContent {
     height: 65vh; 
@@ -398,12 +432,17 @@ footer {
     overflow: auto;
   }
   #aboutMePic {
-    padding-left: 0px;
+    margin-top: 0vh;
+    margin-left: 5%;
+    padding-left: 0%;
     padding-right: 0px;
-    padding-top: 20px;
+    padding-top: 0px;
     float: none;
-    height: 200px;
-    width: 150px;
+    width: 90%;
+    height: 45%;
+    background-image: url("../images/me-wide.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
   .paragraph1, .paragraph2 {
     padding-left: 5px;
@@ -423,8 +462,12 @@ footer {
   .portBtn {
     width: 70vw;
     height: 70vw;
+
   }
   a {
     color: white
+  }
+  .btn {
+    overflow: hidden;
   }
 }
