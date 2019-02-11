@@ -8,6 +8,7 @@ const   modal = document.getElementById('myModal'),
         width1000 = window.matchMedia("(max-width: 1000px)");
 
 var currentWindow = "none"
+var canAnimate = true;
 
 $("html").append("<input display='none' id='myInput' value='sallan306@gmail.com'>")
 
@@ -30,71 +31,91 @@ function changeContentWindowWidth() {
 
 function closeContentWindow() {
 
-    $(".contact").css({"overflow":"hidden"});      
+    if (canAnimate === true) {
+        canAnimate = false
+        $(".contact").css({"overflow":"hidden"});      
+        
+        $(".portfolio").css({"display":"none"})
+        $(".aboutMe").css({"display":"none"})
     
-    $(".portfolio").css({"display":"none"})
-    $(".aboutMe").css({"display":"none"})
+        $(".aboutMe").attr('data-visible', "false");
+        $(".portfolio").attr('data-visible', "false");
+        $(".contact").attr('data-visible', "false");
+    
+        $("#contentWindow").css({"height":"13vh"})
+        setTimeout(()=>{changeContentWindowWidth()},600)
+        setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},1200)
+        $(".portfolio").fadeOut(50)
+        $(".aboutMe").fadeOut(50)
+        $(".contact").fadeOut(50)
+    
+        currentWindow = "none"
 
-    $(".aboutMe").attr('data-visible', "false");
-    $(".portfolio").attr('data-visible', "false");
-    $(".contact").attr('data-visible', "false");
-
-    $("#contentWindow").css({"height":"13vh"})
-    setTimeout(()=>{changeContentWindowWidth()},600)
-    setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},1200)
-    $(".portfolio").fadeOut(50)
-    $(".aboutMe").fadeOut(50)
-    $(".contact").fadeOut(50)
-
-    currentWindow = "none"
+        setTimeout(() => {
+            canAnimate = true
+        },1500)
+    }
 }
 
 function openContentWindow(container) {
-    $("#contentWindow").css({"transform":'translateY(-35vh)'});
-    setTimeout(()=>{$("#contentWindow").css({"width":"80%"})}, 300)
-    setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},800)
-    $(container).css({"overflow":"auto"});
 
-    $(".aboutMe").attr('data-visible', "false");
-    $(".portfolio").attr('data-visible', "false");
-    $(".contact").attr('data-visible', "false");
-
-    $(".portfolio").css({"display": "none"})
-    $(".aboutMe").css({"display":   "none"})
-    $(".contact").css({"display":   "none"})
-
-    $(container).attr('data-visible', "true");
-
-    setTimeout(() => {$(container).fadeIn(300)},1200)   
-
-    currentWindow = container
-
+    if (canAnimate === true) {
+        canAnimate = false
+        $("#contentWindow").css({"transform":'translateY(-35vh)'});
+        setTimeout(()=>{$("#contentWindow").css({"width":"80%"})}, 300)
+        setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},800)
+        $(container).css({"overflow":"auto"});
+    
+        $(".aboutMe").attr('data-visible', "false");
+        $(".portfolio").attr('data-visible', "false");
+        $(".contact").attr('data-visible', "false");
+        
+        $(".portfolio").css({"display": "none"})
+        $(".aboutMe").css({"display":   "none"})
+        $(".contact").css({"display":   "none"})
+        
+        $(container).attr('data-visible', "true");
+        
+        setTimeout(() => {$(container).fadeIn(300)},1200)   
+        currentWindow = container
+        setTimeout(() => {
+            canAnimate = true
+        },1500)
+    }
 }
 
+
 function changeContentWindow(container) {
+    
+    if (canAnimate === true) {
+        canAnimate = false
+        $(".aboutMe").attr('data-visible', "false");
+        $(".portfolio").attr('data-visible', "false");
+        $(".contact").attr('data-visible', "false");
+    
+        $(".portfolio").fadeOut(200)
+        $(".aboutMe").fadeOut(200)
+        $(".contact").fadeOut(200)
+        $(container).css({"overflow":"auto"});
+        $(container).attr('data-visible', "true");
+    
+        setTimeout(()=> {
+            $(container).fadeIn(200)
+        },300)
+        setTimeout(() => {
+            canAnimate = true
+        },500)
+    
+        currentWindow = container      
+    } 
 
-    $(".aboutMe").attr('data-visible', "false");
-    $(".portfolio").attr('data-visible', "false");
-    $(".contact").attr('data-visible', "false");
-
-    $(".portfolio").fadeOut(200)
-    $(".aboutMe").fadeOut(200)
-    $(".contact").fadeOut(200)
-    $(container).css({"overflow":"auto"});
-    $(container).attr('data-visible', "true");
-
-    setTimeout(()=> {
-        $(container).fadeIn(200)
-    },300)
-
-    currentWindow = container
 
 }
 
 
 setTimeout(() => {
 
-    if (currentWindow === "none") {
+    if (currentWindow === "none" && canAnimate === true) {
         openContentWindow(".aboutMe")
     }
 
