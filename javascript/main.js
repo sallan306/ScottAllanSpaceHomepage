@@ -40,8 +40,8 @@ function closeContentWindow() {
     $(".contact").attr('data-visible', "false");
 
     $("#contentWindow").css({"height":"13vh"})
-    setTimeout(()=>{changeContentWindowWidth()},200)
-    setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},400)
+    setTimeout(()=>{changeContentWindowWidth()},600)
+    setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},1200)
     $(".portfolio").fadeOut(50)
     $(".aboutMe").fadeOut(50)
     $(".contact").fadeOut(50)
@@ -51,8 +51,8 @@ function closeContentWindow() {
 
 function openContentWindow(container) {
     $("#contentWindow").css({"transform":'translateY(-35vh)'});
-    setTimeout(()=>{$("#contentWindow").css({"width":"80%"})}, 100)
-    setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},200)
+    setTimeout(()=>{$("#contentWindow").css({"width":"80%"})}, 300)
+    setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},800)
     $(container).css({"overflow":"auto"});
 
     $(".aboutMe").attr('data-visible', "false");
@@ -65,7 +65,7 @@ function openContentWindow(container) {
 
     $(container).attr('data-visible', "true");
 
-    setTimeout(() => {$(container).fadeIn(300)},400)   
+    setTimeout(() => {$(container).fadeIn(300)},1200)   
 
     currentWindow = container
 

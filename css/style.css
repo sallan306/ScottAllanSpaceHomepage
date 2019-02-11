@@ -54,7 +54,7 @@ a {
   margin: auto;
   box-shadow: -20px -15px 20px 0px black;
   border-radius: 20px;
-  transition: 300ms ease-out;
+  transition: 600ms ease-out;
 
   color: #FFF;
   text-align: center;
@@ -137,9 +137,9 @@ a {
   user-select: none;
   letter-spacing: 3px;
 }
-/* .portfolio {
+.portfolio {
   margin-top: 12.5vh;
-} */
+}
 .imageBox {
   position: relative;
   float: left;
@@ -386,6 +386,7 @@ footer {
     }
     .portfolio {
       overflow: hidden;
+      margin-top: 5vh;
     }
     #aboutMePic {
       margin-top: 0vh;
