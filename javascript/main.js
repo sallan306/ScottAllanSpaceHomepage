@@ -12,6 +12,18 @@ var canAnimate = true;
 
 $("html").append("<input display='none' id='myInput' value='sallan306@gmail.com'>")
 
+$(window).resize(() => {
+
+    if (currentWindow === "none") {
+
+        changeContentWindowWidth()
+    }
+
+    else {
+        $("#contentWindow").css({"width":"80%"}) 
+    }
+  });
+
 function changeContentWindowWidth() {
     if (width450.matches) { 
         console.log("under 450px")
@@ -33,6 +45,8 @@ function closeContentWindow() {
 
     if (canAnimate === true) {
         canAnimate = false
+
+
         $(".contact").css({"overflow":"hidden"});      
         
         $(".portfolio").css({"display":"none"})
@@ -43,14 +57,22 @@ function closeContentWindow() {
         $(".contact").attr('data-visible', "false");
     
         $("#contentWindow").css({"height":"13vh"})
-        setTimeout(()=>{changeContentWindowWidth()},600)
-        setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},1200)
+
+        if (window.innerWidth <= 450) {
+            setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},800)
+        }
+        else {
+            setTimeout(()=>{changeContentWindowWidth()},600)
+            setTimeout(()=>{$("#contentWindow").css({"transform":'translateY(0)'})},1200)
+        }
+
         $(".portfolio").fadeOut(50)
         $(".aboutMe").fadeOut(50)
         $(".contact").fadeOut(50)
     
-        currentWindow = "none"
 
+
+        currentWindow = "none"
         setTimeout(() => {
             canAnimate = true
         },1500)
