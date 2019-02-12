@@ -246,3 +246,5 @@ window.onclick = function(event) {
         $(".modal").fadeOut();
     }
 }
+
+
