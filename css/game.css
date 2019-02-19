@@ -1,0 +1,8 @@
+#gameWindow {
+    position: static;
+}
+
+#player {
+    transition: .2s
+}
+

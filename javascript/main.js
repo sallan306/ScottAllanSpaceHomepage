@@ -121,13 +121,13 @@ function changeContentWindow(container) {
 }
 
 
-setTimeout(() => {
+// setTimeout(() => {
 
-    if (currentWindow === "none" && canAnimate === true) {
-        openContentWindow(".aboutMe")
-    }
+//     if (currentWindow === "none" && canAnimate === true) {
+//         openContentWindow(".aboutMe")
+//     }
 
-},2000)
+// },2000)
 
 function copyEmailToClipboard() {
     /* Get the text field */

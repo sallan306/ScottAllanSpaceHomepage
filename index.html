@@ -17,6 +17,7 @@
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
       <link rel="stylesheet" href="./css/style.css">
       <link rel="stylesheet" href="./css/stars.css">
+      <link rel="stylesheet" href="./css/game.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
       <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     </head>
@@ -25,6 +26,9 @@
           <div id='stars'></div>
           <div id='stars2'></div>
           <div id='stars3'></div>
+        </div>
+        <div id="gameWindow">
+          <div id="player" onkeypress="actions()"></div>
         </div>
         <div id="contentWindow">  
           <span id="myName">Scott Allan</span><br>
@@ -85,5 +89,6 @@
   </body>
   <script src="javascript/main.js"></script>
   <script src="javascript/stars.js"></script>
+  <script src="javascript/game.js"></script>
   <script src="javascript/notify.js"></script>
 </html>

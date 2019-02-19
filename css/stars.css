@@ -7,27 +7,46 @@ html {
     width: 1px;
     height: 1px;
     background: transparent;
-    animation: animStar 50s linear infinite;
+    animation: animStar3 10s alternate ease-in-out infinite;
   } 
   #stars2 {
     width: 2px;
     height: 2px;
     border-radius: 100px;
     background: transparent;
-    animation: animStar 25s linear infinite;
+    animation: animStar2 10s alternate ease-in-out infinite;
   }
   #stars3 {
     width: 3px;
     height: 3px;
     border-radius: 100px;
     background: transparent;
-    animation: animStar 12s linear infinite;
+    animation: animStar1 10s alternate ease-in-out infinite;
   }
-  @keyframes animStar {
+  @keyframes animStar3 {
     from {
       transform: translateY(0px);
     }
     to {
-      transform: translateY(-2000px);
+      transform: translateY(-200px);
     }
+    
+  }
+  @keyframes animStar2 {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-400px);
+    }
+    
+  }
+  @keyframes animStar1 {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-800px);
+    }
+    
   }
