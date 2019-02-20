@@ -188,9 +188,9 @@ $("#contactButton").on("click", () => {
 
 btn1.onclick = () => {
     if(window.innerWidth > 780 ) {
-        $(".modal-content").html("<img class='modal-image' src='images/1-Sunny.png' alt='Sunny Weekend'/>")
-        $(".modal-content").append("<p class='modalParagraph'>Hard time deciding where to travel? Let us pick for you! All you need is a free weekend and a sense of adventure.</p><input type='button' class='modalButtonSunny' value='Sunny Weekend' />")
-        $(".modalButtonSunny").on("click",  () => window.location.href="https://sallan306.github.io/SunnyWeekend/")
+        $(".modal-content").html("<img class='modal-image' src='images/crystal.png' alt='Crystal Game'/>")
+        $(".modal-content").append("<p class='modalParagraph'>Each crystal gives you points, but dont go over the max or its GAME OVER! Guess the correct amount and you will be rewarded with victory!</p><input type='button' class='modalButtonSunny' value='Crystal Game' />")
+        $(".modalButtonSunny").on("click",  () => window.location.href="https://sallan306.github.io/CrystalGame/")
         $(".modal").fadeIn()
     }
     else {
@@ -202,9 +202,9 @@ btn1.onclick = () => {
 
 btn2.onclick = () => {
     if(window.innerWidth > 780 ) {
-        $(".modal-content").html("<img class='modal-image' src='images/2-Brew.png' alt='Brewstash'/>")
-        $(".modal-content").append("<div><p class='modalParagraph'>The Brewstash App was designed to improve the user experience of drinking at the many bars in Austin</p><input type='button' class='modalButtonBrew' value='Brewstash' /></div>")
-        $(".modalButtonBrew").on("click",  () => window.location.href="https://brewstash.herokuapp.com/")
+        $(".modal-content").html("<img class='modal-image' src='images/kindling.png' alt='Kindling Friend Finder'/>")
+        $(".modal-content").append("<div><p class='modalParagraph'>Want to see which super hero would be your best buddy? Take this short quiz to find out your perfect sidekick!</p><input type='button' class='modalButtonBrew' value='Kindling' /></div>")
+        $(".modalButtonBrew").on("click",  () => window.location.href="https://kindlingfriendfinder.herokuapp.com/")
         $(".modal").fadeIn()
     }
     else {
