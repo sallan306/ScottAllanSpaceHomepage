@@ -20,24 +20,24 @@ $(window).resize(() => {
     }
 
     else {
-        $("#contentWindow").css({"width":"80%"}) 
+        $("#contentWindow").css({"width":"80vw"}) 
     }
   });
 
 function changeContentWindowWidth() {
     if (width450.matches) { 
         console.log("under 450px")
-        $("#contentWindow").css({"width":"80%"})
+        $("#contentWindow").css({"width":"80vw"})
     } else if (width750.matches) {
         console.log("under 750")
-        $("#contentWindow").css({"width":"50%"})
+        $("#contentWindow").css({"width":"50vw"})
     }
     else if (width1000.matches) {
         console.log("under 1000")
-        $("#contentWindow").css({"width":"40%"})
+        $("#contentWindow").css({"width":"40vw"})
     } else {
         console.log("above 1000")
-        $("#contentWindow").css({"width":"25%"})
+        $("#contentWindow").css({"width":"25vw"})
     }
 }
 
@@ -80,8 +80,8 @@ function openContentWindow(container) {
     if (canAnimate === true) {
         canAnimate = false
         $("#contentWindow").css({"transform":'translateY(-35vh)'});
-        setTimeout(()=>{$("#contentWindow").css({"width":"80%"})}, 300)
-        setTimeout(()=>{$("#contentWindow").css({"height":"85%"})},800)
+        setTimeout(()=>{$("#contentWindow").css({"width":"80vw"})}, 300)
+        setTimeout(()=>{$("#contentWindow").css({"height":"85vh"})},800)
         $(container).css({"overflow":"auto"});
     
         $(".portfolio").css({"display": "none"})

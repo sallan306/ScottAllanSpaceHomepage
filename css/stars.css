@@ -7,27 +7,37 @@ html {
     width: 1px;
     height: 1px;
     background: transparent;
-    animation: animStar 50s linear infinite;
+    animation:  animStar 50s linear infinite,
+                sparkle .5s linear alternate infinite;
   } 
   #stars2 {
     width: 2px;
     height: 2px;
     border-radius: 100px;
     background: transparent;
-    animation: animStar 25s linear infinite;
+    animation: animStar 30s linear infinite;
   }
   #stars3 {
     width: 3px;
     height: 3px;
     border-radius: 100px;
     background: transparent;
-    animation: animStar 12s linear infinite;
+    animation:  animStar 20s linear infinite;
+                /* sparkle .5s linear alternate infinite; */
   }
   @keyframes animStar {
     from {
       transform: translateY(0px);
     }
     to {
-      transform: translateY(-2000px);
+      transform: translateY(-1000px);
+    }
+  }
+  @keyframes sparkle {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
     }
   }

@@ -430,10 +430,9 @@ footer {
 @media only screen and (max-width: 450px) {
   #contentWindow {
     position: absolute;
-    width: 80%;
-    height: 15%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
     color: #FFF;
     text-align: center;
     font-family: "lato", sans-serif;
@@ -474,7 +473,7 @@ footer {
 
   } */
   .contentContainer {
-    height: 85%;
+    height: 85vh;
     position: relative;
     top: 2vh;
   }
