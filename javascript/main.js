@@ -188,13 +188,13 @@ $("#contactButton").on("click", () => {
 
 btn1.onclick = () => {
     if(window.innerWidth > 780 ) {
-        $(".modal-content").html("<img class='modal-image' src='images/crystal.png' alt='Crystal Game'/>")
-        $(".modal-content").append("<p class='modalParagraph'>Each crystal gives you points, but dont go over the max or its GAME OVER! Guess the correct amount and you will be rewarded with victory!</p><input type='button' class='modalButtonSunny' value='Crystal Game' />")
-        $(".modalButtonSunny").on("click",  () => window.location.href="https://sallan306.github.io/CrystalGame/")
+        $(".modal-content").html("<img class='modal-image' src='images/2-Brew.png' alt='Brew Stash'/>")
+        $(".modal-content").append("<p class='modalParagraph'>An Austin-based beer companion app that helps brewers put their beers online, and drinkers find them! Hunt down your favorite craft beers today!</p><input type='button' class='modalButtonSunny' value='Brew Stash' />")
+        $(".modalButtonSunny").on("click",  () => window.location.href="https://brew-stash.herokuapp.com/")
         $(".modal").fadeIn()
     }
     else {
-        window.location.href = "https://sallan306.github.io/SunnyWeekend/"
+        window.location.href = "https://brew-stash.herokuapp.com/"
     }
 }
 
